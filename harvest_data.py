@@ -5,7 +5,6 @@ import yaml
 import snowflake.connector
 import os
 import base64
-# from auth2Snowflake import retrieve_secrets
 from typing import List, Optional, Dict
 from update_snowflake import update_snowflake
 import fnmatch
