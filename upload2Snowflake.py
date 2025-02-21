@@ -71,7 +71,7 @@ def update_snowflake(data: List[Dict]):
             """, (org_name, repo_name, repo_url, costcenter_id, costcenter_path, prod_owner_path, filename, type))
 
             exists = cursor.fetchone()
-            # Compare records - current_values (in Snowflake) vs new_values (from Github)
+            # Compare records - current_values (in Snowflake) vs new_values (from newly harvested data)
             if exists:
                 current_values = {
                     'repo_url': exists[0],
