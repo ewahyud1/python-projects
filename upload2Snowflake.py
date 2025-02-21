@@ -7,7 +7,7 @@ from typing import List, Dict
 # Connects to AWS Secrets Manager to retrieve Snowflake credentials
 def retrieve_secrets(secret_name, region):
     
-    # initialize Secrets Manager client
+    # initialize Secrets Manager boto3 client
     client = boto3.client('secretsmanager', region_name=region)
     
     try:
@@ -15,8 +15,7 @@ def retrieve_secrets(secret_name, region):
     except Exception as e:
         print(f"Error retrieving secret: {e}")
         return
-
-    # Decrypts using KMS key.
+    
     secret = get_secret['SecretString']
     secret_dict = json.loads(secret)
 
