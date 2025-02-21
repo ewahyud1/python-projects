@@ -246,11 +246,11 @@ def main():
             # if prod-owner.md exists, prints it out
             for prod_owner_info in prod_owner_info_list:
                 print(f"Product Owner MD path: {prod_owner_info['path']}")
-                # calling function to search exp_id in prr.md
+                # calling function to search exp_id in prod-owner.md
                 prod_owner_exp_ids = scanner.get_prod_owner_exp_id(prod_owner_info['content'])
                 for prod_owner_exp_id in prod_owner_exp_ids:
                     print(f"File name: {prod_owner_info['filename']} | Expense ID: {prod_owner_exp_id}")
-                    # Compile Snowflake data for prr.md
+                    # Compile Snowflake data for prod-owner.md
                     repo_data = {
                         'org_name': org_name,
                         'repo_name': repo_name,
@@ -263,8 +263,7 @@ def main():
                     }
                     all_repo_data.append(repo_data)                            
               
-            ### Add unique record into Snowflake for repos without any prr/catalog/ciid
-            # if not any([costcenter_info_list, prod_owner_info_list, cai_results]):
+            ### Add unique record into Snowflake for repos without any of the other 2 records
             if not any([costcenter_info_list, prod_owner_info_list]):
                 repo_data = {
                     'org_name': org_name,
