@@ -275,7 +275,7 @@ def main():
                     'filename': None,
                     'type': None
                 }
-                all_repo_data.append(repo_data)
+            all_repo_data.append(repo_data)
 
     ### Compile, Insert/Update into Snowflake ###
     update_snowflake(all_repo_data)
