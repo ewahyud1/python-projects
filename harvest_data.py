@@ -205,7 +205,7 @@ def main():
             print(f"Repository: {repo_name}")
             print(f"URL: {repo_url}")
                         
-            # Check for catalog files
+            # Check for costcenters
             costcenter_info_list = scanner.locate_file(
                 org_name, 
                 repo_name, 
