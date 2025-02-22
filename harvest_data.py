@@ -6,7 +6,7 @@ import snowflake.connector
 import os
 import base64
 from typing import List, Optional, Dict
-from update_snowflake import update_snowflake
+from upload2Snowflake import update_snowflake
 import fnmatch
 
 BASE_URL = "https://api.github.com" # (replace with)GitHub API base URL
