@@ -9,7 +9,7 @@ import argparse
   The script will return the intersection of the two lists, i.e., the servers that are present in both lists.
   The script uses the openpyxl library to read the Excel file and the requests library to make API calls.
   To run the script, execute the following command:
-      python compare-files.py --apikey XXXXXXXXXX
+      python compare-lists.py --apikey XXXXXXXXXX
 """
 
 def compare_server_lists(external_list, octo_list):
